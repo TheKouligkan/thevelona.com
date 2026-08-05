@@ -2,6 +2,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { CollectionCard, ProductCard } from "@/components/cards";
+import { CollectionNav } from "@/components/editorial";
 import { Footer } from "@/components/footer";
 import { NewsletterForm, WholesaleForm } from "@/components/forms";
 import { Header } from "@/components/header";
@@ -30,6 +31,7 @@ export default async function Home() {
         <p className="hero-side-note">Tradition / A new point of view</p>
         <p className="hero-edition">No. 01 <span /> VELONA signature</p>
       </section>
+      <CollectionNav />
 
       <section className="brand-intro page-shell" aria-label="VELONA introduction">
         <p className="section-number">Our small handmade world</p>
