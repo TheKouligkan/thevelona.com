@@ -115,7 +115,9 @@ export default async function Home() {
         </div>
         <div className="craft-media">
           <Image src="/velona/making-tools.jpg" alt="Crochet tools and handmade squares at the VELONA making table" fill sizes="(max-width: 760px) 92vw, 42vw" />
-          <span className="craft-badge">VELONA<br /><small>HANDMADE WORLD</small></span>
+          <span className="craft-badge" aria-hidden="true">
+            <Image className="craft-badge-image" src="/velona/velona-generations-seal.png" alt="" width={1254} height={1254} sizes="130px" />
+          </span>
         </div>
       </section>
 
