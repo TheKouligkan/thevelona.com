@@ -52,8 +52,8 @@ export default async function Home() {
         <div className="drop-image"><Image src="/velona/jacket-olive.jpg" alt="Olive and blush handmade crochet jacket" fill sizes="(max-width: 760px) 100vw, 55vw" /></div>
         <div className="drop-copy">
           <p className="eyebrow">The statement layer</p>
-          <h2>CLUTCH.<br />FRINGE.<br /><em>JACKET.</em></h2>
-          <p>Three signatures. Endless ways to make them yours. Each piece carries hours of handwork and its own small variations.</p>
+          <h2>THE JACKET.<br /><em>Made to be noticed.</em></h2>
+          <p>A statement layer built one square at a time. Each jacket carries hours of handwork, a distinct colour rhythm and its own small variations.</p>
           <Link className="button button-dark" href="/collections/jacket">Discover Jacket <ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default async function Home() {
           <div className="craft-facts"><div><span>01</span><h3>Slowly made</h3><p>Time is part of the design.</p></div><div><span>02</span><h3>Small batches</h3><p>Limited pieces, never mass produced.</p></div><div><span>03</span><h3>Made to feel</h3><p>Beautiful objects with emotion.</p></div></div>
         </div>
         <div className="craft-media">
-          <video autoPlay muted loop playsInline poster="/velona/clutch-work.jpg" aria-label="A VELONA piece being crocheted by hand"><source src="/velona/clutch-motion.mp4" type="video/mp4" /></video>
+          <Image src="/velona/making-tools.jpg" alt="Crochet tools and handmade squares at the VELONA making table" fill sizes="(max-width: 760px) 92vw, 42vw" />
           <span className="craft-badge">VELONA<br /><small>HANDMADE WORLD</small></span>
         </div>
       </section>
@@ -101,7 +101,7 @@ export default async function Home() {
         <div className="world-grid">
           <div><Image src="/velona/blue-bag.jpg" alt="VELONA blue crochet shoulder bag styled outdoors" fill sizes="25vw" /></div>
           <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/jacket-detail.jpg" aria-label="VELONA crochet jacket in motion"><source src="/velona/jacket-motion.mp4" type="video/mp4" /></video></div>
-          <div><Image src="/velona/making-tools.jpg" alt="Crochet tools and handmade granny squares in the VELONA studio" fill sizes="25vw" /></div>
+          <div><Image src="/velona/stitch-closeup.jpg" alt="Close detail of VELONA hand crochet" fill sizes="25vw" /></div>
           <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/swim-detail.jpg" aria-label="VELONA crochet swimwear in motion"><source src="/velona/swim-motion.mp4" type="video/mp4" /></video></div>
         </div>
       </section>
@@ -114,7 +114,7 @@ export default async function Home() {
       </section>
 
       <section className="newsletter" aria-labelledby="newsletter-title">
-        <div className="newsletter-image"><Image src="/velona/brand-popup.jpg" alt="VELONA handmade world at a pop-up event" fill sizes="(max-width: 760px) 100vw, 42vw" /></div>
+        <div className="newsletter-image"><Image src="/velona/beach-tote.jpg" alt="A handmade VELONA tote carried by the sea" fill sizes="(max-width: 760px) 100vw, 42vw" /></div>
         <div className="newsletter-inner"><p className="eyebrow">Notes from our handmade world</p><h2 id="newsletter-title">New drops,<br />workshops and <em>stories.</em></h2><p>Join us for first access to new pieces, behind-the-scenes moments and the occasional invitation.</p><NewsletterForm /></div>
       </section>
       <Footer />

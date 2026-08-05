@@ -68,7 +68,7 @@ export const products: StoreProduct[] = [
   { name: "Summer Crochet Set", slug: "summer-crochet-set", image: "/velona/swimwear-white.jpg", category: "Swimwear", color: "White", currency: "EUR", note: "Summer drop" },
   { name: "The Beach Tote", slug: "beach-tote", image: "/velona/beach-tote.jpg", category: "Bags", color: "Stone", currency: "EUR", note: "Everyday carry" },
   { name: "Granny Jacket No. 02", slug: "granny-jacket-olive", image: "/velona/jacket-olive.jpg", category: "Jacket", color: "Olive / Blush", currency: "EUR", note: "One of a kind" },
-  { name: "Mini Crochet Bag", slug: "mini-crochet-bag", image: "/velona/crochet-bag.jpg", category: "Bags", color: "Natural", currency: "EUR", note: "Handmade" },
+  { name: "Cocoa Granny Jacket", slug: "cocoa-granny-jacket", image: "/velona/jacket-brown.jpg", category: "Jacket", color: "Cocoa / Cream", currency: "EUR", note: "One of a kind" },
 ];
 
 export const fallbackHomepageData: HomepageData = {

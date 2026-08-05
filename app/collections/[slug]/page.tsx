@@ -9,7 +9,7 @@ import { collections, getCollection, getProductsForCollection } from "@/lib/samp
 
 const collectionNotes: Record<string, { detail: string; statement: string; note: string }> = {
   clutch: { detail: "/velona/stitch-closeup.jpg", statement: "Soft structure with a strong point of view.", note: "Dense, tactile stitches give every clutch its shape. Colours are selected in small runs, so each release has its own mood." },
-  fringe: { detail: "/velona/brand-popup.jpg", statement: "A little movement changes everything.", note: "Textile, pattern and long fringe come together in a shoulder bag designed to animate every look." },
+  fringe: { detail: "/velona/stitch-closeup.jpg", statement: "A little movement changes everything.", note: "Textile, pattern and long fringe come together in a shoulder bag designed to animate every look." },
   jacket: { detail: "/velona/jacket-detail.jpg", statement: "A traditional square becomes modern outerwear.", note: "Each jacket is composed panel by panel, balancing colour, scale and texture until the whole piece finds its rhythm." },
   bags: { detail: "/velona/beach-tote.jpg", statement: "Everyday shapes, made more personal.", note: "From mini handles to generous totes, these are useful pieces with the unmistakable character of the handmade." },
   swimwear: { detail: "/velona/swim-detail.jpg", statement: "Crochet made for colour, sun and movement.", note: "Playful separates bring the VELONA palette to summer. Every shape is finished by hand in limited quantities." },
