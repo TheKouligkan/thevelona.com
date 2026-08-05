@@ -41,7 +41,6 @@ export default async function Home() {
           </div>
         </div>
         <a href="#collections" className="hero-scroll" aria-label="Scroll to collections"><ArrowDown aria-hidden="true" /> Explore</a>
-        <div className="hero-woven-label" aria-hidden="true"><span>girl with</span><strong>grandma hobbies</strong><small>VELONA / GREECE</small></div>
         <p className="hero-side-note">Crochet inspired by nature</p>
         <p className="hero-edition">No. 01 <span /> VELONA signature</p>
       </section>
