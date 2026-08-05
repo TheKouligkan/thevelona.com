@@ -18,7 +18,7 @@ const worldPosts = [
   { kind: "image", src: "/velona/jacket-brown.jpg", alt: "Brown and ivory VELONA crochet jacket worn outdoors", label: "Our girls / Jacket" },
   { kind: "video", src: "/velona/swim-motion.mp4", poster: "/velona/swim-detail.jpg", alt: "Colourful VELONA crochet swimwear details", label: "Summer notes / Swim" },
   { kind: "image", src: "/velona/clutch-ivory.jpg", alt: "Ivory handmade VELONA clutch", label: "Made slowly / Clutch" },
-  { kind: "image", src: "/velona/yarn-selection.jpg", alt: "Natural yarn shades selected in the VELONA studio", label: "Colour study / Studio" },
+  { kind: "image", src: "/velona/beach-tote.jpg", alt: "Ivory VELONA crochet tote carried over sunlit rocks by the sea", label: "By the sea / Bags" },
 ] as const;
 
 export default async function Home() {
