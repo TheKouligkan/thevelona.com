@@ -47,7 +47,7 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
               alt=""
               width={1912}
               height={823}
-              sizes="(max-width: 760px) 150px, 178px"
+              sizes="(max-width: 480px) 128px, (max-width: 760px) 138px, 178px"
               loading="eager"
             />
           </Link>
