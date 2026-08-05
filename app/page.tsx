@@ -19,19 +19,29 @@ export default async function Home() {
         <div className="hero-shade" />
         <span className="hero-monogram" aria-hidden="true">V</span>
         <div className="hero-content page-shell">
-          <p className="hero-kicker">The Jacket Drop / Handmade crochet</p>
-          <h1 id="hero-title">Wear the<br /><em>unexpected.</em></h1>
-          <p className="hero-copy">Bold texture, joyful colour and pieces made slowly by two generations of women.</p>
+          <p className="hero-kicker">Girl with grandma hobbies / Handmade in Greece</p>
+          <h1 id="hero-title">Made with her.<br /><em>Worn your way.</em></h1>
+          <p className="hero-copy">Crochet inspired by nature, shaped by two generations, and made slowly in Greece.</p>
           <div className="hero-actions">
             <Link className="button button-ivory" href="/shop">Shop VELONA <ArrowRight aria-hidden="true" /></Link>
             <Link className="text-link light" href="/wholesale">Wholesale <ArrowUpRight aria-hidden="true" /></Link>
           </div>
         </div>
         <a href="#collections" className="hero-scroll" aria-label="Scroll to collections"><ArrowDown aria-hidden="true" /> Explore</a>
-        <p className="hero-side-note">Tradition / A new point of view</p>
+        <div className="hero-woven-label" aria-hidden="true"><span>girl with</span><strong>grandma hobbies</strong><small>VELONA / GREECE</small></div>
+        <p className="hero-side-note">Crochet inspired by nature</p>
         <p className="hero-edition">No. 01 <span /> VELONA signature</p>
       </section>
       <CollectionNav />
+
+      <section className="brand-thread" aria-label="VELONA brand values">
+        <div className="brand-thread-loops" aria-hidden="true" />
+        <div className="brand-thread-inner page-shell">
+          <p>Girl with grandma hobbies</p>
+          <div className="brand-thread-mark" aria-hidden="true"><span>v</span><small>VELONA / GREECE</small></div>
+          <p>Crochet inspired by nature</p>
+        </div>
+      </section>
 
       <section className="brand-intro page-shell" aria-label="VELONA introduction">
         <p className="section-number">Our small handmade world</p>
@@ -101,7 +111,7 @@ export default async function Home() {
         <div className="world-grid">
           <div><Image src="/velona/blue-bag.jpg" alt="VELONA blue crochet shoulder bag styled outdoors" fill sizes="25vw" /></div>
           <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/jacket-detail.jpg" aria-label="VELONA crochet jacket in motion"><source src="/velona/jacket-motion.mp4" type="video/mp4" /></video></div>
-          <div><Image src="/velona/stitch-closeup.jpg" alt="Close detail of VELONA hand crochet" fill sizes="25vw" /></div>
+          <div><Image src="/velona/clutch-emerald.jpg" alt="Emerald VELONA crochet clutch in morning light" fill sizes="25vw" /></div>
           <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/swim-detail.jpg" aria-label="VELONA crochet swimwear in motion"><source src="/velona/swim-motion.mp4" type="video/mp4" /></video></div>
         </div>
       </section>
@@ -114,7 +124,7 @@ export default async function Home() {
       </section>
 
       <section className="newsletter" aria-labelledby="newsletter-title">
-        <div className="newsletter-image"><Image src="/velona/beach-tote.jpg" alt="A handmade VELONA tote carried by the sea" fill sizes="(max-width: 760px) 100vw, 42vw" /></div>
+        <div className="newsletter-image"><Image src="/velona/bag-cocoa.jpg" alt="Cocoa VELONA crochet bag styled with a trench coat" fill sizes="(max-width: 760px) 100vw, 42vw" /></div>
         <div className="newsletter-inner"><p className="eyebrow">Notes from our handmade world</p><h2 id="newsletter-title">New drops,<br />workshops and <em>stories.</em></h2><p>Join us for first access to new pieces, behind-the-scenes moments and the occasional invitation.</p><NewsletterForm /></div>
       </section>
       <Footer />

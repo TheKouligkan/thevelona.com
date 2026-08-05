@@ -69,6 +69,8 @@ export const products: StoreProduct[] = [
   { name: "The Beach Tote", slug: "beach-tote", image: "/velona/beach-tote.jpg", category: "Bags", color: "Stone", currency: "EUR", note: "Everyday carry" },
   { name: "Granny Jacket No. 02", slug: "granny-jacket-olive", image: "/velona/jacket-olive.jpg", category: "Jacket", color: "Olive / Blush", currency: "EUR", note: "One of a kind" },
   { name: "Cocoa Granny Jacket", slug: "cocoa-granny-jacket", image: "/velona/jacket-brown.jpg", category: "Jacket", color: "Cocoa / Cream", currency: "EUR", note: "One of a kind" },
+  { name: "Emerald Soft Clutch", slug: "emerald-soft-clutch", image: "/velona/clutch-emerald.jpg", category: "Clutch", color: "Emerald", currency: "EUR", note: "New season" },
+  { name: "Cocoa Everyday Tote", slug: "cocoa-everyday-tote", image: "/velona/bag-cocoa.jpg", category: "Bags", color: "Cocoa", currency: "EUR", note: "One of a kind" },
 ];
 
 export const fallbackHomepageData: HomepageData = {

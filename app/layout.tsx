@@ -7,16 +7,16 @@ const sans = Manrope({ variable: "--font-sans", subsets: ["latin"], weight: ["40
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thevelona.com"),
-  title: { default: "VELONA — Handmade Crochet with Character", template: "%s — VELONA" },
-  description: "Handmade crochet bags, jackets, swimwear and accessories created in Greece by two generations of women.",
+  title: { default: "VELONA — Girl with Grandma Hobbies", template: "%s — VELONA" },
+  description: "Crochet inspired by nature, handmade slowly in Greece by two generations of women.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
     type: "website", url: "https://thevelona.com", siteName: "VELONA",
-    title: "VELONA — Handmade Crochet with Character",
-    description: "Bold texture, joyful colour and pieces made slowly by two generations of women.",
+    title: "VELONA — Girl with Grandma Hobbies",
+    description: "Crochet inspired by nature, handmade slowly in Greece by two generations of women.",
     images: [{ url: "/og-velona.png", width: 1723, height: 913, alt: "VELONA — made by two generations, worn your way" }],
   },
-  twitter: { card: "summary_large_image", title: "VELONA — Handmade Crochet with Character", description: "Bold texture, joyful colour and pieces made slowly by two generations of women.", images: ["/og-velona.png"] },
+  twitter: { card: "summary_large_image", title: "VELONA — Girl with Grandma Hobbies", description: "Crochet inspired by nature, handmade slowly in Greece by two generations of women.", images: ["/og-velona.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

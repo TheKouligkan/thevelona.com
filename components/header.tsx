@@ -39,7 +39,7 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
           <nav className="desktop-nav" aria-label="Primary navigation">
             {navigation.slice(0, 3).map((item) => <Link key={item.label} href={item.href} className={isCurrent(item.href) ? "is-current" : undefined} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</Link>)}
           </nav>
-          <Link className="wordmark" href="/" aria-label="VELONA home">VELONA</Link>
+          <Link className="wordmark" href="/" aria-label="VELONA home">velona</Link>
           <nav className="desktop-nav desktop-nav-right" aria-label="Secondary navigation">
             {navigation.slice(3).map((item) => <Link key={item.label} href={item.href} className={isCurrent(item.href) ? "is-current" : undefined} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</Link>)}
           </nav>
@@ -51,7 +51,7 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
               <Link key={item.label} href={item.href} className={isCurrent(item.href) ? "is-current" : undefined} aria-current={isCurrent(item.href) ? "page" : undefined} onClick={() => setOpen(false)}><span>{String(index + 1).padStart(2, "0")}</span>{item.label}</Link>
             ))}
           </nav>
-          <div className="mobile-note"><p>Made by two generations.<br />Worn your way.</p><a href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight aria-hidden="true" /></a></div>
+          <div className="mobile-note"><p>Girl with grandma hobbies.<br />Crochet inspired by nature.</p><a href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight aria-hidden="true" /></a></div>
         </div>
       </header>
     </>

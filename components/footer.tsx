@@ -4,11 +4,11 @@ import { ArrowUpRight } from "lucide-react";
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-marquee" aria-hidden="true"><span>MADE BY HAND / MADE TO FEEL / MADE TO LAST / </span><span>MADE BY HAND / MADE TO FEEL / MADE TO LAST / </span></div>
+      <div className="footer-marquee" aria-hidden="true"><span>GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / MADE SLOWLY IN GREECE / </span><span>GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / MADE SLOWLY IN GREECE / </span></div>
       <div className="footer-main page-shell">
         <div className="footer-brand">
-          <Link href="/" className="footer-wordmark">VELONA</Link>
-          <p>A small handmade world where tradition meets a new point of view.</p>
+          <Link href="/" className="footer-wordmark">velona</Link>
+          <p>A girl, her grandmother, and a small handmade world inspired by nature.</p>
         </div>
         <div className="footer-column">
           <p className="footer-label">Explore</p>
