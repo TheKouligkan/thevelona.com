@@ -4,7 +4,7 @@ import Link from "next/link";
 import { CollectionCard, ProductCard } from "@/components/cards";
 import { CollectionNav } from "@/components/editorial";
 import { Footer } from "@/components/footer";
-import { NewsletterForm, WholesaleForm } from "@/components/forms";
+import { NewsletterForm } from "@/components/forms";
 import { Header } from "@/components/header";
 import { getHomepageData } from "@/lib/convex";
 
@@ -154,10 +154,17 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="wholesale" aria-labelledby="wholesale-title">
-        <div className="page-shell wholesale-grid">
-          <div className="wholesale-intro"><p className="eyebrow">For thoughtful retailers</p><h2 id="wholesale-title">Bring our<br /><em>world to yours.</em></h2><p>We partner with boutiques, concept stores and hospitality spaces that value expressive design and genuine handcraft.</p><ul><li>Distinctive small-batch collections</li><li>Seasonal line sheets</li><li>Direct, personal support</li></ul></div>
-          <WholesaleForm />
+      <section className="wholesale wholesale-home" aria-labelledby="wholesale-title">
+        <div className="page-shell wholesale-home-grid">
+          <div className="wholesale-home-heading">
+            <p className="eyebrow">For thoughtful retailers</p>
+            <h2 id="wholesale-title">Bring our world<br /><em>to yours.</em></h2>
+          </div>
+          <div className="wholesale-home-copy">
+            <p>A considered wholesale edit for boutiques and spaces that believe handmade pieces should always feel personal.</p>
+            <p className="wholesale-home-note">Small batches / Seasonal lines / Personal support</p>
+            <Link className="text-link light" href="/wholesale">Discover wholesale <ArrowUpRight aria-hidden="true" /></Link>
+          </div>
         </div>
       </section>
 
