@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     type: "website", url: "https://thevelona.com", siteName: "VELONA",
     title: "VELONA — Girl with Grandma Hobbies",
     description: "Crochet inspired by nature, handmade slowly in Greece by two generations of women.",
-    images: [{ url: "/og-velona.png", width: 1723, height: 913, alt: "VELONA — made by two generations, worn your way" }],
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "VELONA — made with her, worn your way" }],
   },
-  twitter: { card: "summary_large_image", title: "VELONA — Girl with Grandma Hobbies", description: "Crochet inspired by nature, handmade slowly in Greece by two generations of women.", images: ["/og-velona.png"] },
+  twitter: { card: "summary_large_image", title: "VELONA — Girl with Grandma Hobbies", description: "Crochet inspired by nature, handmade slowly in Greece by two generations of women.", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
