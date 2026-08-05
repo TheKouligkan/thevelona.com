@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-marquee" aria-hidden="true"><span>MADE BY HAND · MADE TO FEEL · MADE TO LAST · </span><span>MADE BY HAND · MADE TO FEEL · MADE TO LAST · </span></div>
+      <div className="footer-marquee" aria-hidden="true"><span>MADE BY HAND / MADE TO FEEL / MADE TO LAST / </span><span>MADE BY HAND / MADE TO FEEL / MADE TO LAST / </span></div>
       <div className="footer-main page-shell">
         <div className="footer-brand">
           <Link href="/" className="footer-wordmark">VELONA</Link>
@@ -19,11 +20,11 @@ export function Footer() {
         </div>
         <div className="footer-column footer-social">
           <p className="footer-label">Follow the thread</p>
-          <a href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Instagram ↗</a>
+          <a className="footer-social-link" href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Instagram <ArrowUpRight aria-hidden="true" /></a>
           <p>@velona_crochet</p>
         </div>
       </div>
-      <div className="footer-bottom page-shell"><p>© {new Date().getFullYear()} VELONA</p><p>Greece · Worldwide</p><p>Made with time and care.</p></div>
+      <div className="footer-bottom page-shell"><p>© {new Date().getFullYear()} VELONA</p><p>Greece / Worldwide</p><p>Made with time and care.</p></div>
     </footer>
   );
 }

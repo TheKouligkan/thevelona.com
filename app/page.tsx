@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { CollectionCard, ProductCard } from "@/components/cards";
@@ -16,17 +16,19 @@ export default async function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <Image className="hero-image" src="/velona/hero-jacket.jpg" alt="VELONA black and ivory granny-square crochet jacket" fill priority sizes="100vw" />
         <div className="hero-shade" />
+        <span className="hero-monogram" aria-hidden="true">V</span>
         <div className="hero-content page-shell">
-          <p className="hero-kicker">The Jacket Drop · Handmade crochet</p>
+          <p className="hero-kicker">The Jacket Drop / Handmade crochet</p>
           <h1 id="hero-title">Wear the<br /><em>unexpected.</em></h1>
           <p className="hero-copy">Bold texture, joyful colour and pieces made slowly by two generations of women.</p>
           <div className="hero-actions">
             <Link className="button button-ivory" href="/shop">Shop VELONA <ArrowRight aria-hidden="true" /></Link>
-            <Link className="text-link light" href="/wholesale">Wholesale <span>↗</span></Link>
+            <Link className="text-link light" href="/wholesale">Wholesale <ArrowUpRight aria-hidden="true" /></Link>
           </div>
         </div>
         <a href="#collections" className="hero-scroll" aria-label="Scroll to collections"><ArrowDown aria-hidden="true" /> Explore</a>
-        <p className="hero-side-note">Tradition · with a new point of view</p>
+        <p className="hero-side-note">Tradition / A new point of view</p>
+        <p className="hero-edition">No. 01 <span /> VELONA signature</p>
       </section>
 
       <section className="brand-intro page-shell" aria-label="VELONA introduction">
@@ -37,7 +39,7 @@ export default async function Home() {
       <section className="collections page-shell" id="collections" aria-labelledby="collections-title">
         <div className="section-heading">
           <div><p className="eyebrow">Our signatures</p><h2 id="collections-title">Find your<br /><em>favourite.</em></h2></div>
-          <Link className="text-link" href="/collections">All collections <span>↗</span></Link>
+          <Link className="text-link" href="/collections">All collections <ArrowUpRight aria-hidden="true" /></Link>
         </div>
         <div className="collection-grid">
           {collections.map((collection, index) => <CollectionCard key={collection.slug} collection={collection} index={index} />)}
@@ -69,13 +71,13 @@ export default async function Home() {
           <p className="handwritten">from her hands<br />to mine</p>
         </div>
         <div className="story-content">
-          <p className="eyebrow">Our story · Two generations</p>
+          <p className="eyebrow">Our story / Two generations</p>
           <h2 id="story-title">A shared dream,<br /><em>stitched together.</em></h2>
           <div className="story-copy">
             <p>I’m Akrivi, named after my beloved grandmother. She dreamed of sharing her love for crochet with the world. Today, we are lucky enough to live that dream together.</p>
-            <p>Her experience, patience and passion meet my modern ideas—bringing tradition and the contemporary a little closer with every stitch.</p>
+            <p>Her experience, patience and passion meet my modern ideas, bringing tradition and the contemporary a little closer with every stitch.</p>
           </div>
-          <Link className="text-link light" href="/about">Meet VELONA <span>↗</span></Link>
+          <Link className="text-link light" href="/about">Meet VELONA <ArrowUpRight aria-hidden="true" /></Link>
         </div>
       </section>
 
@@ -93,11 +95,11 @@ export default async function Home() {
       </section>
 
       <section className="world" aria-labelledby="world-title">
-        <div className="world-heading page-shell"><div><p className="eyebrow">@velona_crochet</p><h2 id="world-title">Inside our <em>world.</em></h2></div><a className="text-link" href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Follow on Instagram <span>↗</span></a></div>
+        <div className="world-heading page-shell"><div><p className="eyebrow">@velona_crochet</p><h2 id="world-title">Inside our <em>world.</em></h2></div><a className="text-link" href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Follow on Instagram <ArrowUpRight aria-hidden="true" /></a></div>
         <div className="world-grid">
           <div><Image src="/velona/blue-bag.jpg" alt="VELONA blue crochet shoulder bag styled outdoors" fill sizes="25vw" /></div>
           <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/jacket-detail.jpg" aria-label="VELONA crochet jacket in motion"><source src="/velona/jacket-motion.mp4" type="video/mp4" /></video></div>
-          <div><Image src="/velona/workshop-day.jpg" alt="A sunny VELONA crochet workshop setting" fill sizes="25vw" /></div>
+          <div><Image src="/velona/making-tools.jpg" alt="Crochet tools and handmade granny squares in the VELONA studio" fill sizes="25vw" /></div>
           <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/swim-detail.jpg" aria-label="VELONA crochet swimwear in motion"><source src="/velona/swim-motion.mp4" type="video/mp4" /></video></div>
         </div>
       </section>
