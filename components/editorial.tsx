@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { collections } from "@/lib/sample-data";
@@ -7,10 +7,13 @@ export function CollectionNav() {
   return (
     <nav className="collection-nav" aria-label="Browse collections">
       <div className="page-shell collection-nav-inner">
-        <span>Shop by signature</span>
+        <div className="collection-nav-label">
+          <span>Discover the edit</span>
+          <strong>VELONA signatures</strong>
+        </div>
         {collections.map((collection, index) => (
           <Link key={collection.slug} href={`/collections/${collection.slug}`}>
-            <small>0{index + 1}</small>{collection.name}
+            <small>0{index + 1}</small><span>{collection.name}</span><ArrowUpRight aria-hidden="true" />
           </Link>
         ))}
       </div>

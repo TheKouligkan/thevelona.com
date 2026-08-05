@@ -34,18 +34,19 @@ export default async function Home() {
       </section>
       <CollectionNav />
 
-      <section className="brand-thread" aria-label="VELONA brand values">
-        <div className="brand-thread-loops" aria-hidden="true" />
-        <div className="brand-thread-inner page-shell">
-          <p>Girl with grandma hobbies</p>
-          <div className="brand-thread-mark" aria-hidden="true"><span>v</span><small>VELONA / GREECE</small></div>
-          <p>Crochet inspired by nature</p>
-        </div>
-      </section>
-
       <section className="brand-intro page-shell" aria-label="VELONA introduction">
-        <p className="section-number">Our small handmade world</p>
-        <p className="intro-statement">Crochet with character. Pieces that turn a traditional handcraft into something personal, playful and unmistakably <em>VELONA.</em></p>
+        <div className="brand-intro-aside">
+          <p className="section-number">Our small handmade world</p>
+          <p className="brand-intro-note">Between two generations<br />Thessaloniki, Greece</p>
+        </div>
+        <div className="brand-intro-copy">
+          <p className="intro-statement">Traditional handcraft,<br /><em>rewritten with character.</em></p>
+          <ul className="brand-intro-details" aria-label="VELONA making values">
+            <li>Slowly made</li>
+            <li>Small batches</li>
+            <li>Every piece individual</li>
+          </ul>
+        </div>
       </section>
 
       <section className="collections page-shell" id="collections" aria-labelledby="collections-title">
