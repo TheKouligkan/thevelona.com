@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { CollectionCard, ProductCard } from "@/components/cards";
 import { Footer } from "@/components/footer";
 import { NewsletterForm, WholesaleForm } from "@/components/forms";
@@ -12,115 +13,106 @@ export default async function Home() {
   return (
     <main id="top">
       <Header />
-
       <section className="hero" aria-labelledby="hero-title">
-        <Image className="hero-image" src="/images/hero.jpg" alt="Model wearing an ivory hand-crocheted VELONA set" fill priority sizes="100vw" />
+        <Image className="hero-image" src="/velona/hero-jacket.jpg" alt="VELONA black and ivory granny-square crochet jacket" fill priority sizes="100vw" />
         <div className="hero-shade" />
         <div className="hero-content page-shell">
-          <p className="hero-kicker">Handmade in Greece · Spring / Summer 2026</p>
-          <h1 id="hero-title">A quiet expression<br />of the <em>handmade.</em></h1>
-          <p className="hero-copy">Limited pieces, shaped stitch by stitch for a slower, more considered wardrobe.</p>
+          <p className="hero-kicker">The Jacket Drop · Handmade crochet</p>
+          <h1 id="hero-title">Wear the<br /><em>unexpected.</em></h1>
+          <p className="hero-copy">Bold texture, joyful colour and pieces made slowly by two generations of women.</p>
           <div className="hero-actions">
-            <a className="button button-ivory" href="#best-sellers">Shop the collection <ArrowRight aria-hidden="true" /></a>
-            <a className="text-link light" href="#wholesale">Explore wholesale <span>↗</span></a>
+            <Link className="button button-ivory" href="/shop">Shop VELONA <ArrowRight aria-hidden="true" /></Link>
+            <Link className="text-link light" href="/wholesale">Wholesale <span>↗</span></Link>
           </div>
         </div>
-        <a href="#collections" className="hero-scroll" aria-label="Scroll to collections"><ArrowDown aria-hidden="true" /> Discover</a>
-        <p className="hero-side-note">Made slowly · Worn often</p>
+        <a href="#collections" className="hero-scroll" aria-label="Scroll to collections"><ArrowDown aria-hidden="true" /> Explore</a>
+        <p className="hero-side-note">Tradition · with a new point of view</p>
       </section>
 
-      <section className="intro page-shell" aria-label="Brand introduction">
-        <p className="section-number">01 / Collections</p>
-        <p className="intro-statement">Crochet, reconsidered for the modern wardrobe. Each VELONA piece is an exercise in patience, form, and feeling.</p>
+      <section className="brand-intro page-shell" aria-label="VELONA introduction">
+        <p className="section-number">Our small handmade world</p>
+        <p className="intro-statement">Crochet with character. Pieces that turn a traditional handcraft into something personal, playful and unmistakably <em>VELONA.</em></p>
       </section>
 
       <section className="collections page-shell" id="collections" aria-labelledby="collections-title">
         <div className="section-heading">
-          <div><p className="eyebrow">The collection</p><h2 id="collections-title">Made for a life<br /><em>well lived.</em></h2></div>
-          <a className="text-link" href="#best-sellers">View all collections <span>↗</span></a>
+          <div><p className="eyebrow">Our signatures</p><h2 id="collections-title">Find your<br /><em>favourite.</em></h2></div>
+          <Link className="text-link" href="/collections">All collections <span>↗</span></Link>
         </div>
         <div className="collection-grid">
           {collections.map((collection, index) => <CollectionCard key={collection.slug} collection={collection} index={index} />)}
         </div>
       </section>
 
-      <section className="best-sellers" id="best-sellers" aria-labelledby="best-sellers-title">
-        <div className="page-shell">
-          <div className="section-heading compact-heading">
-            <div><p className="eyebrow">Most loved</p><h2 id="best-sellers-title">The <em>best sellers.</em></h2></div>
-            <p className="section-aside">Small-batch pieces chosen again and again.</p>
-          </div>
-          <div className="product-grid">
-            {bestSellers.map((product) => <ProductCard key={product.slug} product={product} />)}
-          </div>
-          <div className="center-action"><a className="button button-outline" href="#collections">Shop all pieces <ArrowRight aria-hidden="true" /></a></div>
+      <section className="drop-banner" aria-label="Featured jacket collection">
+        <div className="drop-image"><Image src="/velona/jacket-olive.jpg" alt="Olive and blush handmade crochet jacket" fill sizes="(max-width: 760px) 100vw, 55vw" /></div>
+        <div className="drop-copy">
+          <p className="eyebrow">The statement layer</p>
+          <h2>CLUTCH.<br />FRINGE.<br /><em>JACKET.</em></h2>
+          <p>Three signatures. Endless ways to make them yours. Each piece carries hours of handwork and its own small variations.</p>
+          <Link className="button button-dark" href="/collections/jacket">Discover Jacket <ArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
 
-      <section className="story" id="about" aria-labelledby="story-title">
-        <div className="story-image-column">
-          <Image src="/images/editorial.jpg" alt="VELONA crochet detailing in an editorial portrait" fill sizes="(max-width: 760px) 100vw, 50vw" />
-          <p>Every loop holds the mark of its maker.</p>
+      <section className="best-sellers" aria-labelledby="most-loved-title">
+        <div className="page-shell">
+          <div className="section-heading compact-heading"><div><p className="eyebrow">In your favourites</p><h2 id="most-loved-title">Most <em>loved.</em></h2></div><p className="section-aside">Small-batch pieces that keep finding their people.</p></div>
+          <div className="product-grid">{bestSellers.map((product) => <ProductCard key={product.slug} product={product} />)}</div>
+          <div className="center-action"><Link className="button button-outline" href="/shop">See the full edit <ArrowRight aria-hidden="true" /></Link></div>
+        </div>
+      </section>
+
+      <section className="story" aria-labelledby="story-title">
+        <div className="story-collage">
+          <div className="story-image story-image-main"><Image src="/velona/craft-squares.jpg" alt="Hand-crocheted granny squares being assembled" fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
+          <div className="story-image story-image-detail"><Image src="/velona/stitch-closeup.jpg" alt="Close-up of VELONA crochet stitches" fill sizes="220px" /></div>
+          <p className="handwritten">from her hands<br />to mine</p>
         </div>
         <div className="story-content">
-          <p className="eyebrow">Our story</p>
-          <h2 id="story-title">Born from a love of<br /><em>making things last.</em></h2>
+          <p className="eyebrow">Our story · Two generations</p>
+          <h2 id="story-title">A shared dream,<br /><em>stitched together.</em></h2>
           <div className="story-copy">
-            <p>VELONA began with a hook, a length of thread, and the belief that what we wear can carry meaning. Rooted in Mediterranean ease, our pieces bring an old craft into a new rhythm.</p>
-            <p>We work slowly, in close partnership with skilled makers, to create garments with a human touch — each one subtly, beautifully its own.</p>
+            <p>I’m Akrivi, named after my beloved grandmother. She dreamed of sharing her love for crochet with the world. Today, we are lucky enough to live that dream together.</p>
+            <p>Her experience, patience and passion meet my modern ideas—bringing tradition and the contemporary a little closer with every stitch.</p>
           </div>
-          <a className="text-link light" href="#craftsmanship">Read our story <span>↗</span></a>
+          <Link className="text-link light" href="/about">Meet VELONA <span>↗</span></Link>
         </div>
       </section>
 
-      <section className="craft page-shell" id="craftsmanship" aria-labelledby="craft-title">
-        <div className="craft-image-wrap">
-          <Image src="/images/craft-hands.jpg" alt="Hands forming crochet stitches with natural yarn" fill sizes="(max-width: 760px) 100vw, 45vw" />
-          <div className="craft-stamp" aria-hidden="true"><span>VELONA</span><small>MADE BY HAND · GREECE</small></div>
+      <section className="craft page-shell" aria-labelledby="craft-title">
+        <div className="craft-copy">
+          <p className="eyebrow">Made by hand, always</p>
+          <h2 id="craft-title">No two pieces<br /><em>feel exactly alike.</em></h2>
+          <p className="craft-lead">That is the beauty of handwork. Every loop is shaped by a person, every colour is chosen with feeling, and every finished piece has a character all its own.</p>
+          <div className="craft-facts"><div><span>01</span><h3>Slowly made</h3><p>Time is part of the design.</p></div><div><span>02</span><h3>Small batches</h3><p>Limited pieces, never mass produced.</p></div><div><span>03</span><h3>Made to feel</h3><p>Beautiful objects with emotion.</p></div></div>
         </div>
-        <div className="craft-content">
-          <p className="eyebrow">The art of the stitch</p>
-          <h2 id="craft-title">Crafted by hand.<br /><em>Considered by nature.</em></h2>
-          <p className="craft-lead">There are no shortcuts in crochet. Every stitch is made by hand, building texture and form one small gesture at a time.</p>
-          <ol className="craft-steps">
-            <li><span>01</span><div><h3>Natural fibers</h3><p>Breathable cottons and considered yarns chosen for feel, movement, and longevity.</p></div></li>
-            <li><span>02</span><div><h3>Human hands</h3><p>Each piece passes through the hands of one maker from its first loop to its final finish.</p></div></li>
-            <li><span>03</span><div><h3>Small quantities</h3><p>Produced in thoughtful runs that honor time, material, and the people behind the work.</p></div></li>
-          </ol>
+        <div className="craft-media">
+          <video autoPlay muted loop playsInline poster="/velona/clutch-work.jpg" aria-label="A VELONA piece being crocheted by hand"><source src="/velona/clutch-motion.mp4" type="video/mp4" /></video>
+          <span className="craft-badge">VELONA<br /><small>HANDMADE WORLD</small></span>
         </div>
       </section>
 
-      <section className="journal" id="journal" aria-labelledby="journal-title">
-        <div className="journal-image"><Image src="/images/studio-still.jpg" alt="Crochet bag, yarn, and tools in the VELONA studio" fill sizes="(max-width: 760px) 100vw, 56vw" /></div>
-        <div className="journal-copy">
-          <p className="eyebrow">From the journal · No. 01</p>
-          <h2 id="journal-title">Why slow is<br /><em>always in season.</em></h2>
-          <p>A note on fewer, better things — and the quiet value of clothes made at a human pace.</p>
-          <a className="text-link" href="#journal">Read the journal <span>↗</span></a>
+      <section className="world" aria-labelledby="world-title">
+        <div className="world-heading page-shell"><div><p className="eyebrow">@velona_crochet</p><h2 id="world-title">Inside our <em>world.</em></h2></div><a className="text-link" href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Follow on Instagram <span>↗</span></a></div>
+        <div className="world-grid">
+          <div><Image src="/velona/blue-bag.jpg" alt="VELONA blue crochet shoulder bag styled outdoors" fill sizes="25vw" /></div>
+          <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/jacket-detail.jpg" aria-label="VELONA crochet jacket in motion"><source src="/velona/jacket-motion.mp4" type="video/mp4" /></video></div>
+          <div><Image src="/velona/workshop-day.jpg" alt="A sunny VELONA crochet workshop setting" fill sizes="25vw" /></div>
+          <div className="world-video"><video autoPlay muted loop playsInline poster="/velona/swim-detail.jpg" aria-label="VELONA crochet swimwear in motion"><source src="/velona/swim-motion.mp4" type="video/mp4" /></video></div>
         </div>
       </section>
 
-      <section className="wholesale" id="wholesale" aria-labelledby="wholesale-title">
+      <section className="wholesale" aria-labelledby="wholesale-title">
         <div className="page-shell wholesale-grid">
-          <div className="wholesale-intro">
-            <p className="eyebrow">For independent retailers</p>
-            <h2 id="wholesale-title">Bring VELONA<br /><em>to your store.</em></h2>
-            <p>We partner with thoughtful boutiques and concept stores that share our appreciation for craft, provenance, and slower fashion.</p>
-            <ul><li>Small opening orders</li><li>Seasonal line sheets</li><li>Dedicated stockist support</li></ul>
-          </div>
+          <div className="wholesale-intro"><p className="eyebrow">For thoughtful retailers</p><h2 id="wholesale-title">Bring our<br /><em>world to yours.</em></h2><p>We partner with boutiques, concept stores and hospitality spaces that value expressive design and genuine handcraft.</p><ul><li>Distinctive small-batch collections</li><li>Seasonal line sheets</li><li>Direct, personal support</li></ul></div>
           <WholesaleForm />
         </div>
       </section>
 
       <section className="newsletter" aria-labelledby="newsletter-title">
-        <div className="newsletter-inner page-shell">
-          <p className="eyebrow">Notes from the studio</p>
-          <h2 id="newsletter-title">New pieces, quiet stories,<br />and things worth <em>keeping.</em></h2>
-          <NewsletterForm />
-          <p className="newsletter-note">Occasional letters only. No noise, ever.</p>
-        </div>
+        <div className="newsletter-image"><Image src="/velona/brand-popup.jpg" alt="VELONA handmade world at a pop-up event" fill sizes="(max-width: 760px) 100vw, 42vw" /></div>
+        <div className="newsletter-inner"><p className="eyebrow">Notes from our handmade world</p><h2 id="newsletter-title">New drops,<br />workshops and <em>stories.</em></h2><p>Join us for first access to new pieces, behind-the-scenes moments and the occasional invitation.</p><NewsletterForm /></div>
       </section>
-
       <Footer />
     </main>
   );

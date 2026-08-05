@@ -31,7 +31,7 @@ export default defineSchema({
     name: v.string(),
     slug: v.string(),
     description: v.string(),
-    price: v.number(),
+    price: v.optional(v.number()),
     compareAtPrice: v.optional(v.number()),
     currency: v.string(),
     image: v.string(),

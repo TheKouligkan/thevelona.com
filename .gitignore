@@ -41,3 +41,6 @@ dev-*.log
 /.wrangler/
 /outputs/
 /work/
+
+# Local Instagram media analysis (source material lives outside the site)
+/media-audit/

@@ -1,76 +1,56 @@
 "use client";
 
-import { Menu, Search, ShoppingBag, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const navigation = ["Shop", "Collections", "About", "Wholesale", "Journal", "Contact"];
+const navigation = [
+  { label: "Shop", href: "/shop" },
+  { label: "Collections", href: "/collections" },
+  { label: "About", href: "/about" },
+  { label: "Wholesale", href: "/wholesale" },
+  { label: "Journal", href: "/journal" },
+  { label: "Contact", href: "/contact" },
+];
 
-const anchors: Record<string, string> = {
-  Shop: "#best-sellers",
-  Collections: "#collections",
-  About: "#about",
-  Wholesale: "#wholesale",
-  Journal: "#journal",
-  Contact: "#contact",
-};
-
-export function Header() {
+export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   return (
-    <header className="site-header">
-      <div className="header-inner">
-        <button
-          className="icon-button mobile-menu-button"
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
-
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          {navigation.slice(0, 3).map((item) => (
-            <a key={item} href={anchors[item]}>{item}</a>
-          ))}
-        </nav>
-
-        <a className="wordmark" href="#top" aria-label="VELONA home">VELONA</a>
-
-        <nav className="desktop-nav desktop-nav-right" aria-label="Secondary navigation">
-          {navigation.slice(3).map((item) => (
-            <a key={item} href={anchors[item]}>{item}</a>
-          ))}
-        </nav>
-
-        <div className="header-actions">
-          <a className="icon-button" href="#best-sellers" aria-label="Search products">
-            <Search aria-hidden="true" />
-          </a>
-          <a className="icon-button" href="#best-sellers" aria-label="View shopping bag">
-            <ShoppingBag aria-hidden="true" />
-          </a>
+    <>
+      <div className={`announcement ${tone === "dark" ? "announcement-dark" : ""}`}>
+        <p>Handmade pieces, made slowly in Greece</p>
+        <p className="announcement-center">Free shipping in Greece over €60</p>
+        <a href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">@velona_crochet</a>
+      </div>
+      <header className={`site-header site-header-${tone}`}>
+        <div className="header-inner">
+          <button className="icon-button mobile-menu-button" type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
+            {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
+          <nav className="desktop-nav" aria-label="Primary navigation">
+            {navigation.slice(0, 3).map((item) => <Link key={item.label} href={item.href}>{item.label}</Link>)}
+          </nav>
+          <Link className="wordmark" href="/" aria-label="VELONA home">VELONA</Link>
+          <nav className="desktop-nav desktop-nav-right" aria-label="Secondary navigation">
+            {navigation.slice(3).map((item) => <Link key={item.label} href={item.href}>{item.label}</Link>)}
+          </nav>
+          <a className="header-instagram" href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer" aria-label="VELONA on Instagram">IG</a>
         </div>
-      </div>
-
-      <div className={`mobile-drawer ${open ? "is-open" : ""}`} aria-hidden={!open}>
-        <nav aria-label="Mobile navigation">
-          {navigation.map((item, index) => (
-            <a key={item} href={anchors[item]} onClick={() => setOpen(false)}>
-              <span>{String(index + 1).padStart(2, "0")}</span>{item}
-            </a>
-          ))}
-        </nav>
-        <p>Slowly made in Greece<br />for everywhere life takes you.</p>
-      </div>
-    </header>
+        <div className={`mobile-drawer ${open ? "is-open" : ""}`} aria-hidden={!open}>
+          <nav aria-label="Mobile navigation">
+            {navigation.map((item, index) => (
+              <Link key={item.label} href={item.href} onClick={() => setOpen(false)}><span>{String(index + 1).padStart(2, "0")}</span>{item.label}</Link>
+            ))}
+          </nav>
+          <div className="mobile-note"><p>Made by two generations.<br />Worn your way.</p><a href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+        </div>
+      </header>
+    </>
   );
 }

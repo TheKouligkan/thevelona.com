@@ -8,7 +8,7 @@ export const homepage = query({
       .query("collections")
       .withIndex("by_featured_order", (q) => q.eq("featured", true))
       .filter((q) => q.eq(q.field("status"), "published"))
-      .take(3);
+      .take(5);
 
     const products = await ctx.db
       .query("products")
