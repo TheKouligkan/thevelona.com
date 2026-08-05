@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Bodoni_Moda, Manrope } from "next/font/google";
 import "./globals.css";
 
-const editorial = Cormorant_Garamond({ variable: "--font-editorial", subsets: ["latin"], weight: ["400", "500", "600"], style: ["normal", "italic"] });
+const editorial = Bodoni_Moda({ variable: "--font-editorial", subsets: ["latin"], weight: ["400", "500", "600"], style: ["normal", "italic"] });
 const sans = Manrope({ variable: "--font-sans", subsets: ["latin"], weight: ["400", "500", "600"] });
+const fontVariables = {
+  "--font-editorial": editorial.style.fontFamily,
+  "--font-sans": sans.style.fontFamily,
+} as React.CSSProperties;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://thevelona.com"),
@@ -20,5 +24,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${editorial.variable} ${sans.variable}`}>{children}</body></html>;
+  return <html lang="en"><body className={`${editorial.variable} ${sans.variable}`} style={fontVariables}>{children}</body></html>;
 }
