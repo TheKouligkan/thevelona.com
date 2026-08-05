@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -7,7 +8,16 @@ export function Footer() {
       <div className="footer-marquee" aria-hidden="true"><span>GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / MADE SLOWLY IN GREECE / </span><span>GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / MADE SLOWLY IN GREECE / </span></div>
       <div className="footer-main page-shell">
         <div className="footer-brand">
-          <Link href="/" className="footer-wordmark">velona</Link>
+          <Link href="/" className="footer-wordmark" aria-label="VELONA home">
+            <Image
+              className="footer-logo-image"
+              src="/velona/velona-wordmark.png"
+              alt=""
+              width={1912}
+              height={823}
+              sizes="260px"
+            />
+          </Link>
           <p>A girl, her grandmother, and a small handmade world inspired by nature.</p>
         </div>
         <div className="footer-column">

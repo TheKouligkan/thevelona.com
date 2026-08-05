@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -39,7 +40,17 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
           <nav className="desktop-nav" aria-label="Primary navigation">
             {navigation.slice(0, 3).map((item) => <Link key={item.label} href={item.href} className={isCurrent(item.href) ? "is-current" : undefined} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</Link>)}
           </nav>
-          <Link className="wordmark" href="/" aria-label="VELONA home">velona</Link>
+          <Link className="wordmark brand-logo" href="/" aria-label="VELONA home">
+            <Image
+              className="brand-logo-image"
+              src="/velona/velona-wordmark.png"
+              alt=""
+              width={1912}
+              height={823}
+              sizes="(max-width: 760px) 150px, 178px"
+              priority
+            />
+          </Link>
           <nav className="desktop-nav desktop-nav-right" aria-label="Secondary navigation">
             {navigation.slice(3).map((item) => <Link key={item.label} href={item.href} className={isCurrent(item.href) ? "is-current" : undefined} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</Link>)}
           </nav>
