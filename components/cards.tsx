@@ -8,7 +8,7 @@ export function CollectionCard({ collection, index = 0 }: { collection: StoreCol
     <article className={`collection-card collection-card-${(index % 3) + 1}`}>
       <Link href={`/collections/${collection.slug}`} aria-label={`Explore ${collection.name}`}>
         <div className="collection-image-wrap">
-          <Image src={collection.image} alt={`${collection.name} collection by VELONA`} className="collection-image" fill sizes="(max-width: 760px) 88vw, 33vw" />
+          <Image src={collection.image} alt={`${collection.name} collection by VELONA`} className="collection-image" fill sizes="(max-width: 760px) 83vw, (max-width: 1050px) 44vw, 20vw" />
           <span className="collection-index" aria-hidden="true">0{index + 1}</span>
           <span className="collection-arrow"><ArrowUpRight aria-hidden="true" /></span>
         </div>

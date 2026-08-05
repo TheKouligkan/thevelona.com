@@ -1,15 +1,15 @@
 "use client";
 
-import { ConvexHttpClient } from "convex/browser";
 import { ArrowRight } from "lucide-react";
 import { FormEvent, useState } from "react";
-import { api } from "@/convex/_generated/api";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-function getClient() {
+async function getClient() {
   const url = process.env.NEXT_PUBLIC_CONVEX_URL;
-  return url ? new ConvexHttpClient(url) : null;
+  if (!url) return null;
+  const { ConvexHttpClient } = await import("convex/browser");
+  return new ConvexHttpClient(url);
 }
 
 export function NewsletterForm() {
@@ -20,8 +20,11 @@ export function NewsletterForm() {
     const formElement = event.currentTarget;
     const form = new FormData(formElement);
     try {
-      const client = getClient();
-      if (client) await client.mutation(api.storefront.subscribeToNewsletter, { email: String(form.get("email")), source: "website_newsletter" });
+      const client = await getClient();
+      if (client) {
+        const { api } = await import("@/convex/_generated/api");
+        await client.mutation(api.storefront.subscribeToNewsletter, { email: String(form.get("email")), source: "website_newsletter" });
+      }
       setStatus("success");
       formElement.reset();
     } catch { setStatus("error"); }
@@ -44,12 +47,15 @@ export function WholesaleForm() {
     const formElement = event.currentTarget;
     const form = new FormData(formElement);
     try {
-      const client = getClient();
-      if (client) await client.mutation(api.storefront.submitWholesaleInquiry, {
+      const client = await getClient();
+      if (client) {
+        const { api } = await import("@/convex/_generated/api");
+        await client.mutation(api.storefront.submitWholesaleInquiry, {
         firstName: String(form.get("firstName")), lastName: String(form.get("lastName")), email: String(form.get("email")),
         businessName: String(form.get("businessName")), website: String(form.get("website")) || undefined,
         country: String(form.get("country")), storeType: String(form.get("storeType")) || undefined, message: String(form.get("message")),
-      });
+        });
+      }
       setStatus("success");
       formElement.reset();
     } catch { setStatus("error"); }

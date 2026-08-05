@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Bodoni_Moda, Manrope } from "next/font/google";
 import "./globals.css";
 
-const editorial = Bodoni_Moda({ variable: "--font-editorial", subsets: ["latin"], weight: ["400", "500", "600"], style: ["normal", "italic"] });
+const editorial = Bodoni_Moda({ variable: "--font-editorial", subsets: ["latin"], weight: ["400", "500"], style: ["normal", "italic"], display: "swap" });
 const sans = Manrope({ variable: "--font-sans", subsets: ["latin"], weight: ["400", "500", "600"] });
 const fontVariables = {
   "--font-editorial": editorial.style.fontFamily,

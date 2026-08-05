@@ -6,20 +6,8 @@ import { CollectionNav } from "@/components/editorial";
 import { Footer } from "@/components/footer";
 import { NewsletterForm } from "@/components/forms";
 import { Header } from "@/components/header";
+import { InstagramReel } from "@/components/instagram-reel";
 import { getHomepageData } from "@/lib/convex";
-
-const worldPosts = [
-  { kind: "image", src: "/velona/blue-bag.jpg", alt: "VELONA blue crochet shoulder bag at a neighbourhood market", label: "Street style / Bags" },
-  { kind: "video", src: "/velona/jacket-motion.mp4", poster: "/velona/jacket-detail.jpg", alt: "VELONA crochet jacket moving in the city", label: "In motion / Jacket" },
-  { kind: "image", src: "/velona/fringe-bag.jpg", alt: "Floral VELONA fringe bag styled with black", label: "Signature / Fringe" },
-  { kind: "image", src: "/velona/craft-squares.jpg", alt: "Ivory and cocoa crochet squares in the VELONA studio", label: "At the table / Making" },
-  { kind: "video", src: "/velona/clutch-motion.mp4", poster: "/velona/clutch-emerald.jpg", alt: "Emerald VELONA clutch turning in morning light", label: "In motion / Clutch" },
-  { kind: "image", src: "/velona/bag-cocoa.jpg", alt: "Cocoa crochet bag styled with denim and a trench coat", label: "Out and about / Bags" },
-  { kind: "image", src: "/velona/jacket-brown.jpg", alt: "Brown and ivory VELONA crochet jacket worn outdoors", label: "Our girls / Jacket" },
-  { kind: "video", src: "/velona/swim-motion.mp4", poster: "/velona/swim-detail.jpg", alt: "Colourful VELONA crochet swimwear details", label: "Summer notes / Swim" },
-  { kind: "image", src: "/velona/clutch-ivory.jpg", alt: "Ivory handmade VELONA clutch", label: "Made slowly / Clutch" },
-  { kind: "image", src: "/velona/beach-tote.jpg", alt: "Ivory VELONA crochet tote carried over sunlit rocks by the sea", label: "By the sea / Bags" },
-] as const;
 
 export default async function Home() {
   const { collections, bestSellers } = await getHomepageData();
@@ -116,44 +104,14 @@ export default async function Home() {
         <div className="craft-media">
           <Image src="/velona/making-tools.jpg" alt="Crochet tools and handmade squares at the VELONA making table" fill sizes="(max-width: 760px) 92vw, 42vw" />
           <span className="craft-badge" aria-hidden="true">
-            <Image className="craft-badge-image" src="/velona/velona-generations-seal.png" alt="" width={1254} height={1254} sizes="130px" />
+            <Image className="craft-badge-image" src="/velona/velona-generations-seal.webp" alt="" width={384} height={384} sizes="130px" />
           </span>
         </div>
       </section>
 
       <section className="world" aria-labelledby="world-title">
         <div className="world-heading page-shell"><div><p className="eyebrow">@velona_crochet</p><h2 id="world-title">Inside our <em>world.</em></h2></div><a className="text-link" href="https://www.instagram.com/velona_crochet/" target="_blank" rel="noreferrer">Follow on Instagram <ArrowUpRight aria-hidden="true" /></a></div>
-        <div className="world-reel" aria-label="A moving edit from VELONA on Instagram">
-          <div className="world-track">
-            {[0, 1].map((setIndex) => (
-              <div className="world-set" key={setIndex} aria-hidden={setIndex === 1}>
-                {worldPosts.map((post, index) => (
-                  <a
-                    className="world-card"
-                    href="https://www.instagram.com/velona_crochet/"
-                    target="_blank"
-                    rel="noreferrer"
-                    key={`${setIndex}-${post.src}`}
-                    tabIndex={setIndex === 1 ? -1 : undefined}
-                    aria-label={`${post.label} on VELONA Instagram`}
-                  >
-                    <span className="world-media">
-                      {post.kind === "image" ? (
-                        <Image src={post.src} alt={setIndex === 0 ? post.alt : ""} fill sizes="(max-width: 760px) 58vw, 20vw" />
-                      ) : (
-                        <video autoPlay muted loop playsInline preload="metadata" poster={post.poster} aria-label={setIndex === 0 ? post.alt : undefined}>
-                          <source src={post.src} type="video/mp4" />
-                        </video>
-                      )}
-                      <span className="world-post-mark" aria-hidden="true">{post.kind === "video" ? "Reel" : "Post"}</span>
-                    </span>
-                    <span className="world-caption"><small>{String(index + 1).padStart(2, "0")}</small>{post.label}</span>
-                  </a>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+        <InstagramReel />
       </section>
 
       <section className="wholesale wholesale-home" aria-labelledby="wholesale-title">

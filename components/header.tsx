@@ -48,7 +48,7 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
               width={1912}
               height={823}
               sizes="(max-width: 760px) 150px, 178px"
-              priority
+              loading="eager"
             />
           </Link>
           <nav className="desktop-nav desktop-nav-right" aria-label="Secondary navigation">
