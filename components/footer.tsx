@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="footer-marquee" aria-hidden="true"><span>GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / MADE SLOWLY IN GREECE / </span><span>GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / MADE SLOWLY IN GREECE / </span></div>
+      <div className="footer-marquee" aria-hidden="true"><span>HANDMADE BETWEEN GENERATIONS / GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / </span><span>HANDMADE BETWEEN GENERATIONS / GIRL WITH GRANDMA HOBBIES / CROCHET INSPIRED BY NATURE / </span></div>
       <div className="footer-main page-shell">
         <div className="footer-brand">
           <Link href="/" className="footer-wordmark" aria-label="VELONA home">
@@ -19,6 +19,7 @@ export function Footer() {
             />
           </Link>
           <p>A girl, her grandmother, and a small handmade world inspired by nature.</p>
+          <p className="footer-origin">Thessaloniki, Greece / Made slowly</p>
         </div>
         <div className="footer-column">
           <p className="footer-label">Explore</p>
