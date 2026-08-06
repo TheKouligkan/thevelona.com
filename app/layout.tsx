@@ -13,7 +13,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thevelona.com"),
   title: { default: "VELONA — Girl with Grandma Hobbies", template: "%s — VELONA" },
   description: "Crochet inspired by nature, handmade slowly in Greece by two generations of women.",
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website", url: "https://thevelona.com", siteName: "VELONA",
     title: "VELONA — Girl with Grandma Hobbies",
