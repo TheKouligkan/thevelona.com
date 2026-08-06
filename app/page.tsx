@@ -37,7 +37,7 @@ export default async function Home() {
       <section className="brand-intro page-shell" aria-label="VELONA introduction">
         <div className="brand-intro-aside">
           <p className="section-number">Our small handmade world</p>
-          <p className="brand-intro-note">Between two generations<br />Thessaloniki, Greece</p>
+          <p className="brand-intro-note">Between two generations<br />Halkidiki, Greece</p>
         </div>
         <div className="brand-intro-copy">
           <p className="intro-statement">Traditional handcraft,<br /><em>rewritten with character.</em></p>

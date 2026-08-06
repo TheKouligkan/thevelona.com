@@ -19,7 +19,7 @@ export function Footer() {
             />
           </Link>
           <p>A girl, her grandmother, and a small handmade world inspired by nature.</p>
-          <p className="footer-origin">Thessaloniki, Greece / Made slowly</p>
+          <p className="footer-origin">Halkidiki, Greece / Made slowly</p>
         </div>
         <div className="footer-column">
           <p className="footer-label">Explore</p>

@@ -131,7 +131,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div><dt>Colour</dt><dd>{product.color}</dd></div>
             <div><dt>Material</dt><dd>{product.materials.join(" / ")}</dd></div>
             <div><dt>Making</dt><dd>Handmade in small quantities</dd></div>
-            <div><dt>Origin</dt><dd>Thessaloniki, Greece</dd></div>
+            <div><dt>Origin</dt><dd>Halkidiki, Greece</dd></div>
           </dl>
 
           <div className="product-accordions">
