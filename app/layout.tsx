@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, Manrope } from "next/font/google";
+import { RouteScrollManager } from "@/components/route-scroll-manager";
 import "./globals.css";
 
 const editorial = Bodoni_Moda({ variable: "--font-editorial", subsets: ["latin"], weight: ["400", "500"], style: ["normal", "italic"], display: "swap" });
@@ -32,5 +33,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${editorial.variable} ${sans.variable}`} style={fontVariables}>{children}</body></html>;
+  return <html lang="en"><body className={`${editorial.variable} ${sans.variable}`} style={fontVariables}><RouteScrollManager />{children}</body></html>;
 }
