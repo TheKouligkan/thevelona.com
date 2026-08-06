@@ -5,6 +5,18 @@ import { FormEvent, useState } from "react";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+type FormKind = "newsletter" | "wholesale";
+
+async function deliverForm(type: FormKind, data: Record<string, FormDataEntryValue>) {
+  const response = await fetch("/api/forms", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ type, data }),
+  });
+
+  if (!response.ok) throw new Error("form_delivery_failed");
+}
+
 async function getClient() {
   const url = process.env.NEXT_PUBLIC_CONVEX_URL;
   if (!url) return null;
@@ -20,10 +32,15 @@ export function NewsletterForm() {
     const formElement = event.currentTarget;
     const form = new FormData(formElement);
     try {
+      await deliverForm("newsletter", Object.fromEntries(form.entries()));
       const client = await getClient();
       if (client) {
-        const { api } = await import("@/convex/_generated/api");
-        await client.mutation(api.storefront.subscribeToNewsletter, { email: String(form.get("email")), source: "website_newsletter" });
+        try {
+          const { api } = await import("@/convex/_generated/api");
+          await client.mutation(api.storefront.subscribeToNewsletter, { email: String(form.get("email")), source: "website_newsletter" });
+        } catch (error) {
+          console.error("Newsletter database save failed after email delivery.", error);
+        }
       }
       setStatus("success");
       formElement.reset();
@@ -33,6 +50,7 @@ export function NewsletterForm() {
     <form className="newsletter-form" onSubmit={submit}>
       <label className="sr-only" htmlFor="newsletter-email">Email address</label>
       <input id="newsletter-email" name="email" type="email" placeholder="Your email address" required autoComplete="email" />
+      <label className="form-trap" aria-hidden="true">Company fax<input name="companyFax" tabIndex={-1} autoComplete="off" /></label>
       <button type="submit" disabled={status === "submitting"} aria-label="Join the newsletter"><ArrowRight aria-hidden="true" /></button>
       <p className="form-message" aria-live="polite">{status === "success" && "Welcome to our small handmade world."}{status === "error" && "Something went wrong. Please try again."}</p>
     </form>
@@ -47,14 +65,19 @@ export function WholesaleForm() {
     const formElement = event.currentTarget;
     const form = new FormData(formElement);
     try {
+      await deliverForm("wholesale", Object.fromEntries(form.entries()));
       const client = await getClient();
       if (client) {
-        const { api } = await import("@/convex/_generated/api");
-        await client.mutation(api.storefront.submitWholesaleInquiry, {
-        firstName: String(form.get("firstName")), lastName: String(form.get("lastName")), email: String(form.get("email")),
-        businessName: String(form.get("businessName")), website: String(form.get("website")) || undefined,
-        country: String(form.get("country")), storeType: String(form.get("storeType")) || undefined, message: String(form.get("message")),
-        });
+        try {
+          const { api } = await import("@/convex/_generated/api");
+          await client.mutation(api.storefront.submitWholesaleInquiry, {
+            firstName: String(form.get("firstName")), lastName: String(form.get("lastName")), email: String(form.get("email")),
+            businessName: String(form.get("businessName")), website: String(form.get("website")) || undefined,
+            country: String(form.get("country")), storeType: String(form.get("storeType")) || undefined, message: String(form.get("message")),
+          });
+        } catch (error) {
+          console.error("Wholesale inquiry database save failed after email delivery.", error);
+        }
       }
       setStatus("success");
       formElement.reset();
@@ -65,7 +88,8 @@ export function WholesaleForm() {
       <div className="form-row"><label><span>First name</span><input name="firstName" required autoComplete="given-name" /></label><label><span>Last name</span><input name="lastName" required autoComplete="family-name" /></label></div>
       <div className="form-row"><label><span>Work email</span><input name="email" type="email" required autoComplete="email" /></label><label><span>Business name</span><input name="businessName" required autoComplete="organization" /></label></div>
       <div className="form-row"><label><span>Website</span><input name="website" type="url" placeholder="https://" autoComplete="url" /></label><label><span>Country</span><input name="country" required autoComplete="country-name" /></label></div>
-      <label><span>Tell us about your store</span><textarea name="message" rows={4} required placeholder="Location, aesthetic, and the pieces you are interested in…" /></label>
+      <label><span>Tell us about your store</span><textarea name="message" rows={4} required maxLength={4000} placeholder="Location, aesthetic, and the pieces you are interested in…" /></label>
+      <label className="form-trap" aria-hidden="true">Company fax<input name="companyFax" tabIndex={-1} autoComplete="off" /></label>
       <button className="button button-ivory" type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Sending…" : "Send inquiry"}<ArrowRight aria-hidden="true" /></button>
       <p className="form-message" aria-live="polite">{status === "success" && "Thank you. We’ll be in touch within 2–3 business days."}{status === "error" && "We couldn’t send your inquiry. Please try again."}</p>
     </form>
