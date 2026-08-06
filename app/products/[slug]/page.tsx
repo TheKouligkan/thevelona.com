@@ -41,7 +41,16 @@ function SupportingMedia({ media, index }: { media: ProductMedia; index: number 
       {media.kind === "video" ? (
         // Product clips are exported without speech or other meaningful audio.
         // eslint-disable-next-line jsx-a11y/media-has-caption
-        <video controls playsInline preload="metadata" poster={media.poster} aria-label={media.alt}>
+        <video
+          autoPlay={media.silentLoop}
+          controls={!media.silentLoop}
+          loop={media.silentLoop}
+          muted={media.silentLoop}
+          playsInline
+          preload={media.silentLoop ? "auto" : "metadata"}
+          poster={media.poster}
+          aria-label={media.alt}
+        >
           <source src={media.src} type="video/mp4" />
         </video>
       ) : (

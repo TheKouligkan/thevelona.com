@@ -23,6 +23,7 @@ export type ProductMedia = {
   kind?: "image" | "video";
   poster?: string;
   position?: string;
+  silentLoop?: boolean;
 };
 
 export type ProductDetail = StoreProduct & {
@@ -136,7 +137,7 @@ export const products: ProductDetail[] = [
     story: "This is the VELONA jacket at its boldest: traditional square construction rebalanced through graphic contrast, generous sleeves and playful texture. Every panel is arranged by eye before the jacket is joined by hand.",
     media: [
       { src: "/velona/jacket-detail.jpg", alt: "Close view of a VELONA granny-square jacket and its handmade joins" },
-      { src: "/velona/jacket-motion.mp4", alt: "A VELONA crochet jacket moving in the city", kind: "video", poster: "/velona/jacket-detail.jpg" },
+      { src: "/velona/jacket-motion.mp4", alt: "A VELONA crochet jacket moving in the city", kind: "video", poster: "/velona/jacket-detail.jpg", silentLoop: true },
     ],
     materials: ["Mixed crochet yarns", "Dimensional soft-touch yarn accents"],
     features: ["Hand-arranged granny-square panels", "Relaxed open front", "Generous statement sleeves"],
@@ -220,7 +221,7 @@ export const products: ProductDetail[] = [
     story: "Nature leads the palette here. Olive grounds the composition while blush and cream bring lightness to each square. The finished jacket feels collected rather than repeated, with every panel carrying a slightly different rhythm.",
     media: [
       { src: "/velona/craft-squares.jpg", alt: "Hand-crocheted squares waiting to be assembled into a VELONA jacket" },
-      { src: "/velona/jacket-motion.mp4", alt: "A handmade VELONA jacket moving outdoors", kind: "video", poster: "/velona/jacket-olive.jpg" },
+      { src: "/velona/jacket-motion.mp4", alt: "A handmade VELONA jacket moving outdoors", kind: "video", poster: "/velona/jacket-olive.jpg", silentLoop: true },
     ],
     materials: ["Mixed crochet yarns", "Soft textured accent yarn"],
     features: ["Individual granny-square composition", "Relaxed open silhouette", "Nature-led colour story"],
