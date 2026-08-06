@@ -25,7 +25,7 @@ export function CollectionCard({ collection, index = 0 }: { collection: StoreCol
 export function ProductCard({ product }: { product: StoreProduct }) {
   return (
     <article className="product-card">
-      <Link href={`/collections/${product.category.toLowerCase()}`} aria-label={`View ${product.name}`}>
+      <Link href={`/products/${product.slug}`} aria-label={`View ${product.name}`}>
         <div className="product-image-wrap">
           <Image src={product.image} alt={`${product.name} in ${product.color}`} className="product-image" fill sizes="(max-width: 760px) 78vw, (max-width: 1050px) 45vw, 25vw" />
           <span className="product-tag">{product.note ?? "Handmade"}</span>
