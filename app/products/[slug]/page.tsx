@@ -73,7 +73,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const currentIndex = products.findIndex((item) => item.slug === product.slug);
   const related = getRelatedProducts(product);
-  const inquiryHref = `mailto:hello@thevelona.com?subject=${encodeURIComponent(`Product inquiry — ${product.name}`)}&body=${encodeURIComponent(`Hello VELONA,\n\nI would like to ask about ${product.name} in ${product.color}.\n\n`)}`;
+  const instagramHref = "https://www.instagram.com/velona_crochet/";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -122,9 +122,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <span>{product.note}</span>
           </div>
           <p className="product-description">{product.description}</p>
-          <Link className="button button-dark product-inquiry-button" href={inquiryHref}>
+          <a className="button button-dark product-inquiry-button" href={instagramHref} target="_blank" rel="noreferrer">
             Ask about this piece <ArrowUpRight aria-hidden="true" />
-          </Link>
+          </a>
           <p className="product-handmade-note">Every VELONA piece is made by hand in Greece. Small variations in stitch, shape and colour are part of its identity.</p>
 
           <dl className="product-facts">
@@ -189,7 +189,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <p className="eyebrow">A piece made for you</p>
           <h2>Have a colour or detail<br /><em>in mind?</em></h2>
           <p>Every made-to-order conversation begins personally. Tell us what drew you to this piece and what you would like to make your own.</p>
-          <Link className="button button-ivory" href={inquiryHref}>Start a conversation <ArrowUpRight aria-hidden="true" /></Link>
+          <a className="button button-ivory" href={instagramHref} target="_blank" rel="noreferrer">Start a conversation <ArrowUpRight aria-hidden="true" /></a>
         </div>
       </section>
 
